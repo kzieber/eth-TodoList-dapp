@@ -9,5 +9,15 @@ contract TodoList {
     bool completed;
   }
 
-  mapping(uint => Task) tasks;
+  mapping(uint => Task) public tasks;
+
+  constructor() public {
+    createTask("Do your Stackathon project");
+  }
+
+  function createTask(string memory _content) public {
+    taskCount ++;
+    //The line below is creating a new task with the struct arguments
+    tasks[taskCount] = Task(taskCount, _content, false);
+  }
 }
