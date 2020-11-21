@@ -116,9 +116,9 @@ App = {
     window.location.reload()
   },
 
-  toggleCompleted: async (e) => {
+  toggleCompleted: async (evt) => {
     App.setLoading(true)
-    const taskId = e.target.name
+    const taskId = evt.target.name
     await App.todoList.toggleCompleted(taskId)
     window.location.reload()
   },
